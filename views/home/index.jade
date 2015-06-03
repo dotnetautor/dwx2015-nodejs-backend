@@ -1,0 +1,59 @@
+
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title dwx2015 demo page
+ 
+  link(rel="stylesheet", href="/vendor/angular-material/angular-material.css")
+  // STYLES
+  link(rel="stylesheet", href="/styles/importer.css")
+  // STYLES END
+  
+body(ng-app='todoApp', layout='column', layout-align='center center')
+  md-toolbar(layout='row', layout-align='center')
+    md-button.menu(hide-gt-sm='', ng-click='ul.toggleTodo()', aria-label='Show todo groups')
+      md-icon(md-svg-icon='menu')
+    |       
+    h2  Material Todo App
+  |     
+  #mainBody(flex='', layout='row', ng-controller='TodoController')
+    md-content.md-padding
+      form(ng-submit='addTodo()')
+        div(layout='', layout-align-gt-sm='center center')
+          md-input-container(flex='85')
+            label Add todo item
+            |               
+            input(ng-model='todoText', placeholder='Todo item')
+          |             
+          md-input-container
+            md-button.md-fab(type='submit', aria-label='Add todo items', ng-disabled='!todoText')
+              md-icon(md-svg-icon='add')
+      |         
+      |         
+      div
+        .listHeader(flex='', layout='', layout-align='end end')
+          | {{(todos | filter: {isComplete: true}).length}} of {{todos.length}} remaining
+          | [
+          a(href='', ng-click='archive()') Archive
+          | ]
+        |           
+        ul
+          li(ng-repeat='todo in todos')
+            md-checkbox(ng-model='todo.isComplete', aria-label='Todo Checkbox', ng-change='itemChanged(todo)')
+              | {{todo.title}} 
+
+  
+  // SCRIPTS
+  script(src="/js/dependencies/sails.io.js")
+  // SCRIPTS END
+  script(src="/vendor/angular/angular.js")
+  script(src="/vendor/angular-animate/angular-animate.js")
+  script(src="/vendor/angular-aria/angular-aria.js")
+  script(src="/vendor/angular-sails/angular-sails.js")
+  script(src="/vendor/angular-material/angular-material.js")
+  script(src="/vendor/lodash/lodash.js")
+  script(src="/vendor/restangular/restangular.js")
+  
+  script(src="/js/app.js")
+   
+    
