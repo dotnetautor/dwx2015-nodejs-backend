@@ -35,6 +35,6 @@
     "type": "git",
     "url": "git://github.com/anonymous node/sails user/dwx2015-demo.git"
   },
-  "author": "anonymous node/sails user",
-  "license": ""
+  "author": "Matthias Fischer",
+  "license": "MIT"
 }
