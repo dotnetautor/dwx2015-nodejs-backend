@@ -3,10 +3,11 @@ html(lang="en")
 head
   meta(charset="UTF-8")
   title dwx2015 demo page
- 
+  meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+
   link(rel="stylesheet", href="vendor/angular-material/angular-material.css")
   // STYLES
-  link(rel="stylesheet", href="min/production.min.css")
+  link(rel="stylesheet", href="/styles/importer.css")
   // STYLES END
   
 body(ng-app='todoApp', layout='column', layout-align='center center')
@@ -44,7 +45,7 @@ body(ng-app='todoApp', layout='column', layout-align='center center')
 
   
   // SCRIPTS
-  script(src="min/production.min.js")
+  script(src="/js/dependencies/sails.io.js")
   // SCRIPTS END
   script(src="vendor/angular/angular.js")
   script(src="vendor/angular-animate/angular-animate.js")
